@@ -1,0 +1,12 @@
+<h1>{{ artist.artist_text }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<p>{{ artist.artist_details }}<p>
+
+<ul>
+{% for song in artist.song_set.all %}
+    <li>{{ forloop.counter }} {{ song.song_text }}</li>
+{% endfor %}
+</ul>
+
